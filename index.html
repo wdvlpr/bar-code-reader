@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <div id="resultado"></div>
     <div id="camera"></div>
     <script src="quagga.min.js"></script>
     <script>
@@ -30,7 +31,7 @@
             Quagga.start();
         });
         Quagga.onDetected(function(data){
-            console.log(data);
+            document.getElementById("resultado").innerHTML = data.codeResult.code;
         });
     </script>
 
