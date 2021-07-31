@@ -9,20 +9,21 @@
 </head>
 
 <body>
-    <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
+    
+    <div style="width: 500px" id="reader"></div>
+
+    <script src="html5-qrcode.min.js"></script>
     <script>
         function onScanSuccess(decodedText, decodedResult) {
             // Handle on success condition with the decoded text or result.
             console.log(`Scan result: ${decodedText}`, decodedResult);
         }
 
-        var html5QrcodeScanner = new Html5QrcodeScanner(
-            "reader", { fps: 10, qrbox: 250 });
+        var html5QrcodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
         html5QrcodeScanner.render(onScanSuccess);
     </script>
 
-    <div style="width: 500px" id="reader"></div>
-
+    
 </body>
 
 </html>
