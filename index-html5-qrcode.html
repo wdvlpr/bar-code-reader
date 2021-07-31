@@ -10,13 +10,13 @@
 
 <body>
     
-    <div style="width: 500px" id="reader"></div>
+    <div id="resultado"></div>
+    <div style="width: 100%" id="reader"></div>
 
     <script src="html5-qrcode.min.js"></script>
     <script>
         function onScanSuccess(decodedText, decodedResult) {
-            // Handle on success condition with the decoded text or result.
-            console.log(`Scan result: ${decodedText}`, decodedResult);
+            document.getElementById("resultado").innerHTML = ecodedResult.result.text;
         }
 
         var html5QrcodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
